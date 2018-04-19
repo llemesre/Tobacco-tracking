@@ -6,7 +6,7 @@
 * {box-sizing: border-box}
 
 body {
-    background-color: #CEE3F6;
+    background-color: #E8F5F4;
     font-family: arial, sans-serif;
     font-size:90%;/* par defaut 100% de la taille paramétrée dans le navigateur */
 }
@@ -19,7 +19,7 @@ text-align:right;
 .tab {
     float: left;
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    background-color: #80B4B0;
     width: 30%;
     height: 1200px;
 }
@@ -57,13 +57,13 @@ text-align:right;
     width: 70%;
     border-left: none;
     height: 1200px;
-background-color:#b3b3cb;
+background-color:#ADD1CE;
 }
 
 
 .header {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: #CED3D2;
   padding: 20px 10px;
 }
 
@@ -98,7 +98,7 @@ background-color:#b3b3cb;
 }
 
 .footer {
-background-color:#eaeffa;
+background-color:#F6F8F9;
 height: 50px;
 text-align:left;
 clear:both;
@@ -199,7 +199,10 @@ clear:both;
     font-size: 12px;
 }
 
-
+.copyright {
+    float: left;
+ font-weight:bold;
+}
 
 @media screen and (max-width: 500px) {
   .header a {
@@ -233,6 +236,7 @@ clear:both;
 
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Geneva')">Geneva</button>
   <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
   <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
 </div>
@@ -282,18 +286,28 @@ clear:both;
 
 </div>
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>French market.</p> 
-</div>
-
 <div id="Tokyo" class="tabcontent">
   <h3>Tokyo</h3>
   <p>Japan market.</p>
 </div>
 
+<div id="Geneva" class="tabcontent">
+  <h3>Geneva</h3>
+  <p>Swiss market.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>French market.</p> 
+</div>
+
+
+
 <div id="footer">
- <p>&copy; 2018 CapGemini </p>
+<div class="copyright">
+
+<p>&copy; 2018 <span style="color:#2594E3">CapGemini</span> - AppsTwo.</p>
+</div>
  <div class="haut">
    <a href="#haut">Haut de page</a>
 
