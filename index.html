@@ -11,6 +11,42 @@ body {
     font-size:90%;/* par defaut 100% de la taille paramétrée dans le navigateur */
 }
 
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: dodgerblue;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+
+.btnNewTransaction {
+    border: none;
+    background-color: #2196F3;
+    color: white;
+    padding: 5px 20px;
+    font-size: 16px;
+    cursor: pointer;
+position: absolute;
+top:150px;
+ right: 20px;
+
+}
+
+.btnNewTransaction:hover {background: #0b7dda;}
+
 .haut {
 text-align:right;
 }
@@ -223,7 +259,9 @@ clear:both;
 </head>
 
 <body>
-<div id="haut"></div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
 <div class="header">
   <a href="#default" class="logo">Tobacco Industry</a>
   <div class="header-right">
@@ -232,54 +270,85 @@ clear:both;
     <a href="#about">About</a>
   </div>
 </div>
-<p>Welcome on track and trace page !</p>
+<p style="color:blue">Welcome on tobacco industry page !</p>
 
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Transactions')" id="defaultOpen">Transactions</button>
   <button class="tablinks" onclick="openCity(event, 'Geneva')">Geneva</button>
   <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
   <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
 </div>
 
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>British market</p>
+<div id="Transactions" class="tabcontent">
+  <h3>Transactions</h3>
+<button class="btnNewTransaction">New transaction</button>
+
+
+<form >
+  Track number :
+  <input type="text" name="lsearch" value="38789045">
+  <input type="submit" value="Submit">
+</form>
+
+
+ 
   <div class="timeline">
     <div class="container left">
       <div class="content">
-        <h2>2017</h2>
-        <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        <h2>Purchase order created</h2>
+        <p>Purchase order number : PON-38789045<br />
+         Created on : 04/18/18 2:30 PM<br />
+	 Order amount : 1800 CHF<br />
+         <span style="color:blue">Vendor : company</span></p>
       </div>
     </div>
     <div class="container right">
       <div class="content">
-        <h2>2016</h2>
-        <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ahabeo iusto primis ea eam.</p>
+        <h2>Sales order</h2>
+        <p>Sales order number : SON-38789045<br />
+         Sales order date : 04/20/18 9:45 AM<br />
+	 Supplier code : AZ090<br />
+         <span style="color:blue">Vendor : company</span></p>
       </div>
     </div>
     <div class="container left">
       <div class="content">
-        <h2>2015</h2>
-        <p>Lorem ipsum dolor sit amet, quo ei Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-      </div>
-    </div>
+        <h2>Good issue</h2>
+        <p>Good issue number : GION-38789045<br />
+         Good issue date : 04/20/18 10:15 AM<br />
+	 <span style="color:blue">Vendor : company</span></p>
+     </div>
+   </div>
     <div class="container right">
       <div class="content">
-        <h2>2012</h2>
-        <p>Lorem ipsum dolor si. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        <h2>Shipping details</h2>
+        <p>Consignment number : CN-012018<br />
+         Pickup date : 04/20/18 9:45 AM<br />
+         Expecting delivery date : 04/23/18 11:30 AM<br />
+         Actual delivery date : 04/23/18 13:30 PM<br />
+	 Statut : Delivered<br />
+         <span style="color:blue">Logistic : company</span></p>
       </div>
     </div>
+ 
     <div class="container left">
       <div class="content">
-        <h2>2011</h2>
-        <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-      </div>
+        <h2>Vendor-invoice</h2>
+        <p>Invoice number INN-012018<br />
+         Invoice date : 04/23/18 5:45 PM<br />
+         Publish date : 04/23/18 18:00 PM<br />
+         <span style="color:blue">Vendor : Invoice department</span></p>
+     </div>
     </div>
     <div class="container right">
       <div class="content">
-        <h2>2007</h2>
-        <p>Lorem ipsum dolor sit amet,  perfecto mnesarchum.</p>
-      </div>
+      <h2> Good receipts</h2>
+       <p><span style="color:red">Goods receipts : Delivered on 04/23/18 13:30 PM</span><br />
+         Good receipt : GRN-012018<br />
+         Good receive on : 04/23/18 14:00 PM<br />
+         <span style="color:blue">Vendor : Good receipts department</span></p>
+     </div>
     </div>
   </div>
 
@@ -301,17 +370,17 @@ clear:both;
   <p>French market.</p> 
 </div>
 
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>British market.</p> 
+</div>
 
 
 <div id="footer">
 <div class="copyright">
 
 <p>&copy; 2018 <span style="color:#2594E3">CapGemini</span> - AppsTwo.</p>
-</div>
- <div class="haut">
-   <a href="#haut">Haut de page</a>
 
- </div>
 
 <script>
 function openCity(evt, cityName) {
@@ -330,6 +399,25 @@ function openCity(evt, cityName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+
 </script>
      
 </body>
